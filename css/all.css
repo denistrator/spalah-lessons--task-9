@@ -126,3 +126,43 @@ body {
 .dog:hover .dog-feet-left {
   animation-delay: .1s;
 }
+
+@keyframes clock-func {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock-hand {
+  fill: #434C6D;
+}
+
+.clock-hand-minute-hand {
+  transform-origin: bottom;
+  animation: clock-func .5s infinite;
+  animation-timing-function: linear;
+}
+
+.clock-hand-hour-hand {
+  transform-origin: left;
+  animation: clock-func 30s infinite;
+  animation-timing-function: linear;
+}
+
+.clock:hover .clock-hand {
+  fill: #ff5100;
+  animation-duration: 0s;
+}
+
+.clock:hover .clock-hand-minute-hand {
+  transform-origin: bottom;
+  animation-duration: .21s;
+}
+
+.clock:hover .clock-hand-hour-hand {
+  transform-origin: left;
+  animation-duration: 1.26s;
+}

@@ -115,3 +115,45 @@ body {
 		}		
 	}
 }
+
+@keyframes clock-func {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.clock {
+	* {
+		// transition: ease 5s;
+	}
+	&-hand {
+		fill: #434C6D;
+		&-minute-hand {
+			transform-origin: bottom;
+			animation: clock-func .5s infinite;
+			animation-timing-function: linear;
+		}
+		&-hour-hand {
+			transform-origin: left;
+			animation: clock-func 30s infinite;
+			animation-timing-function: linear;
+		}
+	}
+	&:hover {
+		.clock-hand {
+			fill: #ff5100;
+			animation-duration: 0s;
+			&-minute-hand {
+				transform-origin: bottom;
+				animation-duration: .21s;
+			}
+			&-hour-hand {
+				transform-origin: left;
+				animation-duration: 1.26s;
+			}
+		}
+	}
+}
