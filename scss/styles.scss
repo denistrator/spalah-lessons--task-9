@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	max-height: 100vh;
+	height: 100vh;
+}
+
+.dog {
+	* {
+		transition: all 1s;
+	}
+	&-muzzle {
+	}
+	&-nose {
+		fill: #333E48;
+	}
+	&-ears {
+		fill : #65513C;
+	}
+	&-eyes {
+		fill: #333E48;
+		transform-origin: center;
+	}
+	&:hover {
+		.dog-muzzle {
+			transform: translateY(10px) rotate(1.5deg);
+		}
+		.dog-ears {
+			transform: translateY(16px) scale(1, 1.4);
+		}
+		.dog-eyes {
+			transform: scale(1.3);
+		}
+	}
+}
