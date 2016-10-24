@@ -4,25 +4,40 @@ body {
 }
 
 .wrapper {
-	max-height: 100vh;
+	height: 100%;
 	height: 100vh;
+	margin: 0 auto;
+	display: block;
+}
+
+.full-height {
+	max-height: 100vh;
 }
 
 @keyframes shakeing {
 	from {
-		transform: translateX(2px)
+		transform: translateX(2px);
 	}
 	to {
-		transform: translateX(-2px)
+		transform: translateX(-2px);
 	}
 }
 
 @keyframes wobbling {
 	from {
-		transform: rotate(3deg)
+		transform: rotate(3deg);
 	}
 	to {
-		transform: rotate(-3deg)
+		transform: rotate(-3deg);
+	}
+}
+
+@keyframes trampling {
+	from {
+		transform: scale(1, 1);
+	}
+	to {
+		transform: scale(1, 0.95);
 	}
 }
 
@@ -44,7 +59,9 @@ body {
 	&-eyes {
 		fill: #333E48;
 		transform: scale(1.05, 0.85);
+		transition: 6s;
 		transform-origin: center;
+		transition-timing-function: ease;
 	}
 	&-teeth {
 		fill: #FADF8D;
@@ -53,9 +70,17 @@ body {
 		fill: #826940;
 		transform-origin: center;
 	}
+	&-feet {
+		fill: #826940;
+		transform-origin: top;
+	}
 	&:not(:hover) {
 		.dog-mouth {
 			animation: shakeing 0.5s infinite alternate;
+			animation-timing-function: linear;
+		}
+		.dog-feet-left {
+			animation: trampling .8s infinite alternate;
 			animation-timing-function: linear;
 		}
 	}
@@ -67,7 +92,7 @@ body {
 			transform: translateY(15px) scale(1, 1.4);
 		}
 		.dog-eyes {
-			transform: scale(1.3);
+			transform: scale(2);
 		}
 		.dog-teeth {
 			transform: translateY(25%);
@@ -81,5 +106,12 @@ body {
 			animation-delay: .9s;
 			animation-timing-function: linear;
 		}
+		.dog-feet {
+			animation: trampling 0.2s infinite alternate;
+			animation-timing-function: linear;
+		}
+		.dog-feet-left {
+			animation-delay: .1s;
+		}		
 	}
 }
