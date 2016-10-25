@@ -10,34 +10,77 @@ body {
   display: block;
 }
 
+.wrapper + .wrapper {
+  margin-top: 15px;
+}
+
 .full-height {
   max-height: 100vh;
 }
 
-@keyframes shakeing {
+@-webkit-keyframes shakeing {
   from {
-    transform: translateX(2px);
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
   }
   to {
-    transform: translateX(-2px);
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+}
+
+@keyframes shakeing {
+  from {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  to {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+  }
+}
+
+@-webkit-keyframes wobbling {
+  from {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  to {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
   }
 }
 
 @keyframes wobbling {
   from {
-    transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
   }
   to {
-    transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+}
+
+@-webkit-keyframes trampling {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1, 0.95);
+            transform: scale(1, 0.95);
   }
 }
 
 @keyframes trampling {
   from {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   to {
-    transform: scale(1, 0.95);
+    -webkit-transform: scale(1, 0.95);
+            transform: scale(1, 0.95);
   }
 }
 
@@ -46,7 +89,9 @@ body {
 }
 
 .dog-muzzle {
-  transform-origin: center;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 
 .dog-nose {
@@ -55,15 +100,23 @@ body {
 
 .dog-ears {
   fill: #65513C;
-  transform-origin: top;
-  transform: scale(0.8, 1);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: scale(0.8, 1);
+      -ms-transform: scale(0.8, 1);
+          transform: scale(0.8, 1);
 }
 
 .dog-eyes {
   fill: #333E48;
-  transform: scale(1.05, 0.85);
+  -webkit-transform: scale(1.05, 0.85);
+      -ms-transform: scale(1.05, 0.85);
+          transform: scale(1.05, 0.85);
   transition: 6s;
-  transform-origin: center;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
   transition-timing-function: ease;
 }
 
@@ -73,66 +126,105 @@ body {
 
 .dog-mouth {
   fill: #826940;
-  transform-origin: center;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 
 .dog-feet {
   fill: #826940;
-  transform-origin: top;
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
 }
 
 .dog:not(:hover) .dog-mouth {
-  animation: shakeing 0.5s infinite alternate;
-  animation-timing-function: linear;
+  -webkit-animation: shakeing 0.5s infinite alternate;
+          animation: shakeing 0.5s infinite alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .dog:not(:hover) .dog-feet-left {
-  animation: trampling .8s infinite alternate;
-  animation-timing-function: linear;
+  -webkit-animation: trampling .8s infinite alternate;
+          animation: trampling .8s infinite alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .dog:hover .dog-muzzle {
-  transform: translateY(12px) rotate(1.5deg);
+  -webkit-transform: translateY(12px) rotate(1.5deg);
+      -ms-transform: translateY(12px) rotate(1.5deg);
+          transform: translateY(12px) rotate(1.5deg);
 }
 
 .dog:hover .dog-ears {
-  transform: translateY(15px) scale(1, 1.4);
+  -webkit-transform: translateY(15px) scale(1, 1.4);
+      -ms-transform: translateY(15px) scale(1, 1.4);
+          transform: translateY(15px) scale(1, 1.4);
 }
 
 .dog:hover .dog-eyes {
-  transform: scale(2);
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2);
 }
 
 .dog:hover .dog-teeth {
-  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+      -ms-transform: translateY(25%);
+          transform: translateY(25%);
 }
 
 .dog:hover .dog-mouth {
-  transform: scale(1.1, 1);
+  -webkit-transform: scale(1.1, 1);
+      -ms-transform: scale(1.1, 1);
+          transform: scale(1.1, 1);
 }
 
 .dog:hover .dog-ear-right-holder {
-  transform-origin: top left;
-  animation: wobbling 0.8s infinite alternate;
-  animation-delay: .9s;
-  animation-timing-function: linear;
+  -webkit-transform-origin: top left;
+      -ms-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-animation: wobbling 0.8s infinite alternate;
+          animation: wobbling 0.8s infinite alternate;
+  -webkit-animation-delay: .9s;
+          animation-delay: .9s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .dog:hover .dog-feet {
-  animation: trampling 0.2s infinite alternate;
-  animation-timing-function: linear;
+  -webkit-animation: trampling 0.2s infinite alternate;
+          animation: trampling 0.2s infinite alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .dog:hover .dog-feet-left {
-  animation-delay: .1s;
+  -webkit-animation-delay: .1s;
+          animation-delay: .1s;
+}
+
+@-webkit-keyframes clock-func {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @keyframes clock-func {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -141,28 +233,35 @@ body {
 }
 
 .clock-hand-minute-hand {
-  transform-origin: bottom;
-  animation: clock-func .5s infinite;
-  animation-timing-function: linear;
+  -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-animation: clock-func .5s infinite;
+          animation: clock-func .5s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .clock-hand-hour-hand {
-  transform-origin: left;
-  animation: clock-func 30s infinite;
-  animation-timing-function: linear;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation: clock-func 30s infinite;
+          animation: clock-func 30s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .clock:hover .clock-hand {
   fill: #ff5100;
-  animation-duration: 0s;
 }
 
 .clock:hover .clock-hand-minute-hand {
-  transform-origin: bottom;
-  animation-duration: .21s;
+  -webkit-animation-duration: .21s;
+          animation-duration: .21s;
 }
 
 .clock:hover .clock-hand-hour-hand {
-  transform-origin: left;
-  animation-duration: 1.26s;
+  -webkit-animation-duration: 1.26s;
+          animation-duration: 1.26s;
 }

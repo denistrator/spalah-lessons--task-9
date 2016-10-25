@@ -8,6 +8,9 @@ body {
 	height: 100vh;
 	margin: 0 auto;
 	display: block;
+	& + & {
+		margin-top: 15px;
+	}
 }
 
 .full-height {
@@ -126,9 +129,6 @@ body {
 }
 
 .clock {
-	* {
-		// transition: ease 5s;
-	}
 	&-hand {
 		fill: #434C6D;
 		&-minute-hand {
@@ -145,13 +145,10 @@ body {
 	&:hover {
 		.clock-hand {
 			fill: #ff5100;
-			animation-duration: 0s;
 			&-minute-hand {
-				transform-origin: bottom;
 				animation-duration: .21s;
 			}
 			&-hour-hand {
-				transform-origin: left;
 				animation-duration: 1.26s;
 			}
 		}
